@@ -2,5 +2,5 @@
   <% @projects.each do |project| %>
     <%= render partial: "project", locals: { project: project } %>
   <% end %>
-  <%= paginate(@tweets) %>
+  <%= paginate(@projects) %>
 </div>
