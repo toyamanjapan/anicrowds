@@ -1,0 +1,6 @@
+<div class="contents row">
+  <% @projects.each do |project| %>
+    <%= render partial: "project", locals: { project: project } %>
+  <% end %>
+  <%= paginate(@tweets) %>
+</div>
