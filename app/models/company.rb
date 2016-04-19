@@ -5,3 +5,9 @@ class Company < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :projects
 end
+
+class CompanyParameterSanitizer < Devise::ParameterSanitizer
+  def sign_up
+    default_params.permit(:companyname) #追加したいパラメータ
+  end
+end

@@ -7,7 +7,7 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    Project.create(title: project_params[:title], project_detail: project_params[:project_detail], industry: project_params[:industry], other: project_params[:other]) #company_id: current_company.id追加必要
+    Project.create(title: project_params[:title], project_detail: project_params[:project_detail], industry: project_params[:industry], other: project_params[:other], company_id: current_company.id)
   end
     private
   def project_params
