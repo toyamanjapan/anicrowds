@@ -5,12 +5,14 @@
       <li>
         <%= link_to "詳細", project_path(project.id), method: :get %>
       </li>
-      <li>
-          <%= link_to '編集', "/projects/#{project.id}/edit", method: :get %>
-      </li>
-      <li>
-          <%= link_to '削除', "/projects/#{project.id}", method: :delete %>
-      </li>
+        <% if company_signed_in? && current_company.id == project.company.id %>
+        <li>
+            <%= link_to '編集', "/projects/#{project.id}/edit", method: :get %>
+        </li>
+        <li>
+            <%= link_to '削除', "/projects/#{project.id}", method: :delete %>
+        </li>
+        <% end %>
     </ul>
   </div>
   <%= simple_format(project.title) %>

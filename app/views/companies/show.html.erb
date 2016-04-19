@@ -2,8 +2,8 @@
   <p><%= @name %>'s projects</p>
   <% @projects.each do |project| %>
     <div class="content_post">
-      <%= simple_format(project.text) %>
-      <span class="name"><%= project.name %></span>
+      <%= simple_format(project.title) %>
+      <span class="name"><%= project.company.name %></span>
     </div>
   <% end %>
   <%= paginate(@projects) %>
