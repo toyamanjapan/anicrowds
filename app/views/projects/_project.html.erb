@@ -14,8 +14,9 @@
     </ul>
   </div>
   <%= simple_format(project.title) %>
-  <span class="name">
-    <a href="/companies/<%= project.company_id %>">
-    </a>
-  </span>
+    <span class="name">
+      <a href="">
+        <span>company</span><%= project.company.name %>
+      </a>
+    </span>
 </div>

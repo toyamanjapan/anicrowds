@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
   def index
-    @projects = Project.page(params[:page]).per(5).order("created_at DESC")
+    @projects = Project.includes(:company).page(params[:page]).per(5).order("created_at DESC")
   end
 
   def new

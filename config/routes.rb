@@ -11,4 +11,5 @@ devise_for :users, controllers: {
 }
 root to: "projects#index"
 resources :projects, only: [:index, :show, :new, :create, :destroy, :edit, :update]
+resources :companies, only: [:show]
 end

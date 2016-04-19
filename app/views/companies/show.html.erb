@@ -1,0 +1,10 @@
+<div class="contents row" >
+  <p><%= @name %>'s projects</p>
+  <% @projects.each do |project| %>
+    <div class="content_post">
+      <%= simple_format(project.text) %>
+      <span class="name"><%= project.name %></span>
+    </div>
+  <% end %>
+  <%= paginate(@projects) %>
+</div>

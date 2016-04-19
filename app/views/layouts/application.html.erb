@@ -32,8 +32,15 @@
           </div>
         <% elsif company_signed_in? %>
           <div class="user_nav grid-6">
-            <%= link_to "logout", destroy_user_session_path, method: :delete %>
-            <a class="post" href="/projects/new">Launch</a>
+           <span><%= current_company.name %>
+            <ul class="user__info">
+              <li>
+                <a href="/companies/<%= current_company.id%>">my page</a>
+                <%= link_to "logout", destroy_user_session_path, method: :delete %>
+              </li>
+            </ul>
+          </span>
+          <a class="post" href="/projects/new">Launch</a>
           </div>
         <% else %>
           <div class="grid-6">
