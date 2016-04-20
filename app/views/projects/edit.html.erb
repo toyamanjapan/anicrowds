@@ -4,9 +4,9 @@
       Edit
     </h3>
     <input placeholder="title" type="string" name="title" value="<%= @project.title %>" autofocus="true">
-    <textarea cols="30" name="project_detail" placeholder="project detail" rows="10" value="<%= @project.project_detail %>" autofocus="true"></textarea>
-    <input placeholder="industry" type="string" name="industry" value="<%= @project.industry %>" autofocus="true">
-    <textarea cols="30" name="other" placeholder="other" rows="10" value="<%= @project.other %>" autofocus="true"></textarea>
+    <textarea cols="30" name="project_detail" placeholder="project detail" rows="10"><%= @project.project_detail %></textarea>
+    <input placeholder="industry" type="string" name="industry" value="<%= @project.industry %>">
+    <textarea cols="30" name="other" placeholder="other" rows="10"><%= @project.other %></textarea>
     <input type="submit" value="SENT">
   <% end %>
 </div>
