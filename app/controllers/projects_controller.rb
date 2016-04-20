@@ -10,6 +10,7 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
+    @concepts = @project.concepts.includes(:user).page(params[:page]).per(5).order("created_at DESC")
   end
 
 
@@ -41,7 +42,7 @@ class ProjectsController < ApplicationController
   end
 
   def move_to_index
-      redirect_to action: :index unless company_signed_in?
+      redirect_to action: :index unless company_signed_in? || user_signed_in?
   end
 
 end

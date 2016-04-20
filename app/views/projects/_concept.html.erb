@@ -1,0 +1,24 @@
+<div class="content_post" style="background-image: url(<%= concept.image %>);">
+  <div class="more">
+    <span><%= image_tag 'arrow_top.png' %></span>
+    <ul class="more_list">
+      <li>
+        <%= link_to "詳細",  "/projects/#{concept.project.id}/concepts/#{concept.id}", method: :get %>
+      </li>
+        <% if user_signed_in? && current_user.id == concept.user.id %>
+        <li>
+            <%= link_to '編集', "/projects/#{concept.project.id}/concepts/#{concept.id}/edit", method: :get %>
+        </li>
+        <li>
+            <%= link_to '削除', "/projects/#{concept.project.id}/concepts/#{concept.id}", method: :delete %>
+        </li>
+        <% end %>
+    </ul>
+  </div>
+  <%= simple_format(concept.title) %>
+    <span class="name">
+      <a href="">
+        <span>user</span><%= concept.user.name %>
+      </a>
+    </span>
+</div>

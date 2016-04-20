@@ -10,6 +10,9 @@ devise_for :users, controllers: {
   registrations: 'users/registrations'
 }
 root to: "projects#index"
-resources :projects, only: [:index, :show, :new, :create, :destroy, :edit, :update]
+resources :projects, only: [:index, :show, :new, :create, :destroy, :edit, :update] do
+  resources :concepts, only: [:index, :show, :new, :create, :destroy, :edit, :update]
+end
 resources :companies, only: [:show]
+resources :users, only: [:show]
 end
