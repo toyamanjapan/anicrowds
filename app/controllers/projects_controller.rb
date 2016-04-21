@@ -2,7 +2,7 @@ class ProjectsController < ApplicationController
   before_action :move_to_index, except: :index
 
   def index
-    @projects = Project.includes(:company).page(params[:page]).per(5).order("created_at DESC")
+    @projects = Project.includes(:company).page(params[:page]).per(9).order("created_at DESC")
   end
 
   def new
@@ -10,7 +10,7 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
-    @concepts = @project.concepts.includes(:user).page(params[:page]).per(5).order("created_at DESC")
+    @concepts = @project.concepts.includes(:user).page(params[:page]).per(9).order("created_at DESC")
   end
 
 

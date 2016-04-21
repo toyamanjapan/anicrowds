@@ -28,7 +28,7 @@
         <% if user_signed_in? %>
           <div class="user_nav grid-6">
             <%= link_to "logout", destroy_user_session_path, method: :delete %>
-            <a class="post" href="/projects">all projects</a>
+            <a class="post" href="/projects">Top page</a>
           </div>
         <% elsif company_signed_in? %>
           <div class="user_nav grid-6">

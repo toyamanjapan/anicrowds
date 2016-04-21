@@ -1,32 +1,37 @@
 <div class="contents row">
-    <div class="content_post">
+    <div class="content_post" style="background-image: url(https://media.giphy.com/media/3oEdvagnVMWBVmi1cA/giphy.gif)">
       <div class="more">
         <span><%= image_tag 'arrow_top.png' %></span>
         <ul class="more_list">
             <% if company_signed_in? && current_company.id == @project.company.id %>
             <li>
-                <%= link_to '編集', "/projects/#{@project.id}/edit", method: :get %>
+                <%= link_to 'edit', "/projects/#{@project.id}/edit", method: :get %>
             </li>
             <li>
-                <%= link_to '削除', "/projects/#{@project.id}", method: :delete %>
+                <%= link_to 'delete', "/projects/#{@project.id}", method: :delete %>
             </li>
             <% end %>
         </ul>
       </div>
-      <%= simple_format(@project.title) %>
+    <ul>
+      <li>title:<%= @project.title %></li>
+      <li>project_detail:<%= @project.project_detail %></li>
+      <li>industry:<%= @project.industry %></li>
+      <li>other:<%= @project.other %></li>
+    </ul>
         <span class="name">
           <a href="">
             <span>company</span><%= @project.company.name %>
           </a>
         </span>
     </div>
-    <div class="container">
-      <div class="contents">
+      <div class="contents clearfix">
        <% @concepts.each do |concept| %>
         <%= render partial: "concept", locals: { concept: concept } %>
          <% end %>
          <%= paginate(@concepts) %>
       </div>
+      <div class="container">
        <% if current_user %>
         <%= form_tag("/projects/#{@project.id}/concepts", method: :post) do %>
           <input placeholder="title" type="string" name="title">
