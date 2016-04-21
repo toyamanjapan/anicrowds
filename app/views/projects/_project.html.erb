@@ -3,14 +3,14 @@
     <span><%= image_tag 'arrow_top.png' %></span>
     <ul class="more_list">
       <li>
-        <%= link_to "詳細", project_path(project.id), method: :get %>
+        <%= link_to "detail", project_path(project.id), method: :get %>
       </li>
         <% if company_signed_in? && current_company.id == project.company.id %>
         <li>
-            <%= link_to '編集', "/projects/#{project.id}/edit", method: :get %>
+            <%= link_to 'edit', "/projects/#{project.id}/edit", method: :get %>
         </li>
         <li>
-            <%= link_to '削除', "/projects/#{project.id}", method: :delete %>
+            <%= link_to 'delete', "/projects/#{project.id}", method: :delete %>
         </li>
         <% end %>
     </ul>
@@ -18,7 +18,7 @@
     <ul>
       <li>title:<%= project.title %></li>
       <li>project_detail:<%= project.project_detail %></li>
-      <li>industry:<%= project.industry %></li>
+      <!-- <li>industry:<%= project.industry %></li> -->
       <li>other:<%= project.other %></li>
     </ul>
     <span class="name">
