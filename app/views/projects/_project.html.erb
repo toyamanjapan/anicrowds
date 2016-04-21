@@ -1,4 +1,4 @@
-<div class="content_post" style="background-image: url(<%= project.image %>);">
+<div class="content_post" style="background-image: url(https://media.giphy.com/media/3oEdvagnVMWBVmi1cA/giphy.gif)">
   <div class="more">
     <span><%= image_tag 'arrow_top.png' %></span>
     <ul class="more_list">
@@ -15,7 +15,12 @@
         <% end %>
     </ul>
   </div>
-  <%= simple_format(project.title) %>
+    <ul>
+      <li>title:<%= project.title %></li>
+      <li>project_detail:<%= project.project_detail %></li>
+      <li>industry:<%= project.industry %></li>
+      <li>other:<%= project.other %></li>
+    </ul>
     <span class="name">
       <a href="">
         <span>company</span><%= project.company.name %>

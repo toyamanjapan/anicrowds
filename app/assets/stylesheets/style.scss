@@ -223,11 +223,11 @@ div.contents.row {
   .new_user{
   font-family: "游ゴシック", "YuGothic";
   }
-  div.content_post {
+  div.content_post{
     @include boxBase(20px 0 ,30px);
     position: relative;
-    height: 400px;
-    color: #fff;
+    height: 200px;
+    color: black;
     background-size: cover;
     background-position: center center;
     border-radius: 3px;
@@ -295,6 +295,19 @@ div.contents.row {
       font-weight: bold;
       text-shadow: 0 0 2px #000, 0 0 1px #000, 0 0 1px #000;
     }
+    company_content p1{
+      @extend .serif;
+      position: absolute;
+      left: 30px;
+      right: 100px;
+      bottom: 30px;
+      margin: 0;
+      font-size: 20px;
+      z-index: 2;
+      font-weight: bold;
+      text-shadow: 0 0 2px #000, 0 0 1px #000, 0 0 1px #000;
+    }
+
     span.name {
       position: absolute;
       right: 30px;
