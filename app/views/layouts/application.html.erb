@@ -27,7 +27,14 @@
         <h1 class="grid-6"><a href="/">Anicrowds</a></h1>
         <% if user_signed_in? %>
           <div class="user_nav grid-6">
-            <%= link_to "logout", destroy_user_session_path, method: :delete %>
+            <span><%= current_user.name %>
+              <ul class="user__info">
+                <li>
+                  <a href="/users/<%= current_user.id%>">my page</a>
+                  <%= link_to "logout", destroy_user_session_path, method: :delete %>
+                </li>
+              </ul>
+            </span>
             <a class="post" href="/projects">Top page</a>
           </div>
         <% elsif company_signed_in? %>
@@ -36,7 +43,7 @@
             <ul class="user__info">
               <li>
                 <a href="/companies/<%= current_company.id%>">my page</a>
-                <%= link_to "logout", destroy_user_session_path, method: :delete %>
+                <%= link_to "logout", destroy_company_session_path, method: :delete %>
               </li>
             </ul>
           </span>
