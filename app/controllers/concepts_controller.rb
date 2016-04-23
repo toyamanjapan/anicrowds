@@ -5,7 +5,9 @@ class ConceptsController < ApplicationController
   end
 
   def show
+    @project = Project.find(params[:project_id])
     @concept = Concept.find(params[:id])
+    @review = Review.new
   end
 
   def edit

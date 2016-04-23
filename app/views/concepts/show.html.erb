@@ -23,4 +23,11 @@
         </a>
       </span>
   </div>
+    <div class="container">
+        <%= form_for [@project, @concept, @review] do |f| %>
+          <%= f.select :rate, options_for_select((1..10), selected: @review.try(:rate)), {prompt: t('placeholder.rate')} %>
+          <%= f.text_area :text %>
+          <%= f.submit 'post' %>
+        <% end %>
+    </div>
 </div>
