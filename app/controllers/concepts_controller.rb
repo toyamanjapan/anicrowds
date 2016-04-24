@@ -8,6 +8,7 @@ class ConceptsController < ApplicationController
     @project = Project.find(params[:project_id])
     @concept = Concept.find(params[:id])
     @review = Review.new
+    @reviews = @concept.reviews.includes(:company)
   end
 
   def edit

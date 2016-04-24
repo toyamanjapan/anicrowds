@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController
   def create
-    binding.pry
     @review = Review.create(create_params)
+    redirect_to "/projects/#{@review.project_id}/concepts/#{@review.concept_id}"
   end
 
   private
