@@ -1,0 +1,139 @@
+      .main_header_area{
+        width: 100%;
+        background-image: image-url('https://media.giphy.com/media/5xaOcLHmiRQgRKr21ws/giphy.gif');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size:cover;
+
+        .main_header_wrapper{
+          width:660px;
+          margin:0 auto;
+          padding:50px 20px;
+
+          .main_copy_wrapper{
+            margin-top:190px;
+            position: relative;
+            &:before{
+              content: "";
+              width: 650px;
+              height: 100px;
+              padding:20px;
+              top: -20px;
+              left: -20px;
+              position: absolute;
+              background-color: white;
+              -webkit-filter: blur(40px);
+              opacity: 0.35;
+            }
+            .main_copy {
+              position: relative;
+              color: gray;
+              font-size: 36px;
+              font-weight: bold;
+              text-align: center;
+              letter-spacing: 0.1em;
+              line-height: 1.5;
+            }
+          }
+          .main_title_wrapper{
+            margin:80px auto 50px auto;
+            .main_title {
+              color: gray;
+              font-size: 18px; //20px;
+              line-height: 1.9; //1.7;
+              //font-weight:bold;
+              text-align: center;
+              letter-spacing: 0.05em;
+            }
+            .main_button_wrapper{
+              margin-top:50px;
+              text-align:center;
+              button{
+                font-size:18px;
+                padding:20px 60px;
+                letter-spacing: 0.1em;
+                font-weight:normal;
+              }
+            }
+
+          }
+        }
+      }
+
+      .responsive_area{
+        width: 100%;
+        &.gray{
+          background-color:gray;
+        }
+        &.white{
+          background-color:white;
+        }
+        .responsive_wrapper{
+          width:900px;
+          margin:0 auto;
+          padding:60px 20px;
+          &:after{
+            content: "";
+            clear: both;
+            display: block;
+          }
+
+          .main_copy_wrapper{
+            margin-bottom:40px;
+            .main_copy{
+              color:gray;
+              font-size:30px;
+              font-weight:bold;
+              text-align:center;
+              letter-spacing: 0.1em;
+              line-height:1.5;
+            }
+          }
+
+          .system_wrapper{
+            &:after{
+              content: "";
+              clear: both;
+              display: block;
+            }
+            .system_content_wrapper{
+              float:left;
+              width: 213px;
+              margin:10px auto;
+              .system_image {
+                width: 213px;
+                height: 130px;
+                margin: 10px 10px;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size:cover;
+                &.image1{
+                  background-image: image-url('https://media.giphy.com/media/5xaOcLyb7qdh1JdPlCw/200.gif');
+                }
+                &.image2{
+                  background-image: image-url('https://media.giphy.com/media/TlK63EDCam0dqCG6Ta8/200.gif');
+                }
+                &.image3{
+                  background-image: image-url('https://media.giphy.com/media/5xaOcLS89Cca2ezuyyY/200.gif');
+                }
+                &.image4{
+                  background-image: image-url('https://media.giphy.com/media/l41lLzqMXFjuDkiPe/200.gif');
+                }
+                &.image5{
+                  background-image: image-url('https://media.giphy.com/media/26tn0ONYXTynFU3Be/200.gif');
+                }
+                &.image6{
+                  background-image: image-url('https://media.giphy.com/media/3o85xLcDhNCn6wUJJC/200.gif');
+                }
+                &.image7{
+                  background-image: image-url('https://media.giphy.com/media/5xaOcLs7r6Gay1T0z6M/200.gif');
+                }
+                &.image8{
+                  background-image: image-url('https://media.giphy.com/media/xTiTnAs7HIcqg50UX6/200.gif');
+                }
+              }
+            }
+          }
+        }
+      }
+

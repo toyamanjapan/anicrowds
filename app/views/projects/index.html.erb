@@ -1,4 +1,71 @@
+<%if user_signed_in? || company_signed_in? %>
+<%else%>
+  <div class="main_header_area">
+    <div class="main_header_wrapper">
+      <div class="main_copy_wrapper">
+        <h1 class="main_copy">
+        A GIF Animation you'll love, guranteed.
+        </h1>
+      </div>
+      <div class="main_title_wrapper">
+        <p class="main_title">
+          Find and work with talented freelance animators online.
+        </p>
+        <div class="main_button_wrapper">
+          <button class="open_modal contact rounded_button blue">Get Started</button>
+        </div>
+      </div>
+    </div>
+  </div>
+ <div class="responsive_area white">
+    <div class="responsive_wrapper">
+      <div class="main_copy_wrapper">
+        <h2 class="main_copy">
+        Multiple Animators, incredible results.
+        </h2>
+      </div>
+      <div class="system_wrapper">
+        <div class="system_content_wrapper">
+          <div class="system_image image1">
+          </div>
+        </div>
+        <div class="system_content_wrapper">
+          <div class="system_image image2">
+          </div>
+        </div>
+        <div class="system_content_wrapper">
+          <div class="system_image image3">
+          </div>
+        </div>
+        <div class="system_content_wrapper">
+          <div class="system_image image4">
+          </div>
+        </div>
+        <div class="system_content_wrapper">
+          <div class="system_image image5">
+          </div>
+        </div>
+        <div class="system_content_wrapper">
+          <div class="system_image image6">
+          </div>
+        </div>
+        <div class="system_content_wrapper">
+          <div class="system_image image7">
+          </div>
+        </div>
+        <div class="system_content_wrapper">
+          <div class="system_image image8">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+ <% end %>
+
 <div class="contents row">
+    <h2 class="main_copy">
+    Check the Projects.
+    </h2>
   <% @projects.each do |project| %>
     <%= render partial: "project", locals: { project: project } %>
   <% end %>
