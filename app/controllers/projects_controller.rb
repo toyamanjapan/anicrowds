@@ -13,7 +13,6 @@ class ProjectsController < ApplicationController
     @concepts = @project.concepts.includes(:user).page(params[:page]).per(9).order("created_at DESC")
   end
 
-
   def edit
     @project = Project.find(params[:id])
   end
