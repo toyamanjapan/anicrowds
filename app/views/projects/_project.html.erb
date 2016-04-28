@@ -17,13 +17,17 @@
     </div>
   </div>
   <div class="content_post_right clearfix">
-    <span><%= project.created_at.strftime("%Y年%m月%d日") %></span>
-      <ul>
+  <% if project.count > 0 %>
+  <span>募集締切まであと<%= project.count %>日 </span>
+  <% else %>
+  <span>募集終了 </span>
+  <% end %>
+     <ul>
         <li class="title"><%= project.title %></li>
         <li class="detail"><%= project.project_detail %></li>
         <li class="industry"><%= project.industry %></li>
         <li class="other"><%= project.other %></li>
-      </ul>
+    </ul>
       <span class="name">
         <a href="">
           <span>company</span><%= project.company.name %>
