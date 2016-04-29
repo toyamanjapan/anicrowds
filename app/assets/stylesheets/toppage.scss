@@ -69,9 +69,9 @@
           background-color:white;
         }
         .responsive_wrapper{
-          width:900px;
+          width:100%;
           margin:0 auto;
-          padding:60px 20px;
+          padding: 60px 20px;
           &:after{
             content: "";
             clear: both;
@@ -131,6 +131,19 @@
                 &.image8{
                   background-image: image-url('https://media.giphy.com/media/xTiTnAs7HIcqg50UX6/200.gif');
                 }
+                &.image9{
+                  background-image: image-url('https://media.giphy.com/media/5xaOcLrwT42k93NYt68/giphy.gif');
+                }
+                &.image10{
+                  background-image: image-url('https://media.giphy.com/media/xTiTnh66UPygYOnYSk/giphy.gif');
+                }
+                &.image11{
+                  background-image: image-url('https://media.giphy.com/media/3o85xqOCIe6PzKUZLG/giphy.gif');
+                }
+                &.image12{
+                  background-image: image-url('https://media.giphy.com/media/TlK63EGRSg3yYIgIsPm/giphy.gif');
+                }
+
               }
             }
           }
