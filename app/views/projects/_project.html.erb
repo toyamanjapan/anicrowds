@@ -17,20 +17,23 @@
     </div>
   </div>
   <div class="content_post_right clearfix">
-  <% if project.count > 0 %>
-  <span>募集締切まであと<%= project.count %>日 </span>
-  <% else %>
-  <span>募集終了 </span>
-  <% end %>
-     <ul>
-        <li class="title"><%= project.title %></li>
-        <li class="detail"><%= project.project_detail %></li>
-        <li class="industry"><%= project.industry %></li>
-        <li class="other"><%= project.other %></li>
-    </ul>
-      <span class="name">
-        <a href="">
-          <span>company</span><%= project.company.name %>
-        </a>
-      </span>
+    <span class="reward clearfix">$<%= project.reward %></span>
+    <div>
+      <% if project.count > 0 %>
+      <span><%= project.count %> days left </span>
+      <% else %>
+      <span>project has been closed. </span>
+      <% end %>
+         <ul>
+            <li class="title"><%= project.title %></li>
+            <li class="detail"><%= project.project_detail %></li>
+            <li class="industry"><%= project.industry %></li>
+            <li class="other"><%= project.other %></li>
+        </ul>
+          <span class="name">
+            <a href="">
+              <span>company</span><%= project.company.name %>
+            </a>
+          </span>
+    </div>
 </div>

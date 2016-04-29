@@ -1,15 +1,15 @@
 <div class="contents row">
   <div class="container">
-    <%= form_tag('/projects', method: :post) do %>
-      <h3>
-        Project
-      </h3>
-      <input placeholder="title" type="string" name="title">
-      <textarea cols="30" name="project_detail" placeholder="project detail" rows="10"></textarea>
-      <input placeholder="industry" type="string" name="industry">
-      <input placeholder="Image Url" type="text" name="image">
-      <textarea cols="30" name="other" placeholder="other" rows="10"></textarea>
-      <input type="submit" value="SENT">
-    <% end %>
+      <% if company_signed_in? %>
+        <%= form_for @project do |f| %>
+          <%= f.text_field :title , :placeholder => "title" %>
+          <%= f.text_field :image , :placeholder => "project image url" %>
+          <%= f.select :reward, [["$300", "300"], ["$500", "500"]], {prompt: t('placeholder.reward')} %>
+          <%= f.text_area :project_detail , :placeholder => "project detail" %>
+          <%= f.text_field :industry , :placeholder => "industry" %>
+          <%= f.text_area :other, :placeholder => "banner size" %>
+          <%= f.submit 'post' %>
+        <% end %>
+      <% end %>
   </div>
 </div>

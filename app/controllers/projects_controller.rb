@@ -6,6 +6,7 @@ class ProjectsController < ApplicationController
   end
 
   def new
+    @project = Project.new
   end
 
   def show
@@ -32,12 +33,12 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    Project.create(title: project_params[:title], project_detail: project_params[:project_detail], industry: project_params[:industry], other: project_params[:other], image: project_params[:image], company_id: current_company.id)
+    Project.create(project_params)
   end
 
     private
   def project_params
-    params.permit(:title, :project_detail, :industry, :other, :image)
+    params.require(:project).permit(:title, :project_detail, :industry, :other, :image, :reward).merge(company_id:current_company.id)
   end
 
   def move_to_index

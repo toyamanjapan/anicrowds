@@ -2,8 +2,13 @@
     <div class="content_post_left clearfix" style="background-image: url(<%= @project.image%>">
     </div>
     <div class="content_post_right clearfix">
+     <% if @project.count > 0 %>
+      <span><%= @project.count %> days left </span>
+      <% else %>
+      <span>project has been closed. </span>
+      <% end %>
       <ul>
-        <li><%= @project.title %></li>
+        <li><u><b><%= @project.title %></b></u></li>
         <li><%= @project.project_detail %></li>
         <!-- <li>Industry:<%= @project.industry %></li> -->
         <li><%= @project.other %></li>
