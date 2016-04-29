@@ -7,6 +7,6 @@ class ReviewsController < ApplicationController
   private
   def create_params
     ids = params.permit(:project_id, :concept_id).merge(company_id: current_company.id)
-    params.require(:review).permit(:text, :rate).merge(ids)
+    params.require(:review).permit(:text, :rate, :prize).merge(ids)
   end
 end

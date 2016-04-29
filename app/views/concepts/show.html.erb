@@ -37,11 +37,12 @@
         </div>
       <% if company_signed_in? && current_company.id == @concept.project.company.id %>
         <%= form_for [@project, @concept, @review] do |f| %>
+          <%= f.select :prize, [["this is a winner", "winner"], ["this is not a winner", "loser"]] , {prompt: t('is this winner of the contest?')} %>
           <%= f.select :rate, options_for_select((1..10), selected: @review.try(:rate)), {prompt: t('placeholder.rate')} %>
           <%= f.text_area :text %>
           <%= f.submit 'post' %>
         <% end %>
       <% end %>
-   　 <a class="post" href="/projects/<%= @concept.project.id%>">back to concept index</a>
+     <a class="post" href="/projects/<%= @concept.project.id%>">back to concept index</a>
     </div>
 </div>
