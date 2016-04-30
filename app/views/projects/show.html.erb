@@ -1,38 +1,49 @@
 <div class="contents row">
-    <div class="content_post_left clearfix" style="background-image: url(<%= @project.image%>">
-    </div>
+    <div class="content_post_left clearfix" style="background-image: url(<%= @project.image%>"></div>
     <div class="content_post_right clearfix">
-     <% if @project.count > 0 %>
-      <span><%= @project.count %> days left </span>
-      <% else %>
-      <span>project has been closed. </span>
-      <% end %>
+      <span class="reward clearfix">$<%= @project.reward %></span>
+      <% if @project.count > 0 %>
+        <span><%= @project.count %> days left </span>
+        <% else %>
+        <span>project has been closed. </span>
+        <% end %>
       <ul>
         <li><u><b><%= @project.title %></b></u></li>
         <li><%= @project.project_detail %></li>
-        <!-- <li>Industry:<%= @project.industry %></li> -->
+        <li><%= @project.industry %></li>
         <li><%= @project.other %></li>
       </ul>
-          <span class="name">
-            <a href="">
-              <span>company</span><%= @project.company.name %>
-            </a>
-          </span>
+      <span class="name">
+        <a href="">
+          <span>company</span><%= @project.company.name %>
+        </a>
+      </span>
     </div>
 
+    <% if user_signed_in? %>
       <div class="contents clearfix">
-       <% @concepts.each do |concept| %>
-        <%= render partial: "concept", locals: { concept: concept } %>
-         <% end %>
-         <%= paginate(@concepts) %>
+        <% @concepts.each do |concept| %>
+          <% if concept.user == current_user %>
+            <%= render partial: "concept", locals: { concept: concept } %>
+          <% else %>
+          <% end %>
+        <% end %>
+        <%= paginate(@concepts) %>
       </div>
       <div class="container">
-       <% if current_user %>
         <%= form_tag("/projects/#{@project.id}/concepts", method: :post) do %>
           <input placeholder="title" type="string" name="title">
           <input placeholder="Image Url" type="text" name="image">
           <input type="submit" value="POST">
-        <% end %>
        <% end %>
+      </div>
+
+    <% elsif company_signed_in? %>
+      <div class="contents clearfix">
+        <% @concepts.each do |concept| %>
+            <%= render partial: "concept", locals: { concept: concept } %>
+        <% end %>
+        <%= paginate(@concepts) %>
     </div>
+    <% end %>
 </div>
