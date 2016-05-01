@@ -334,6 +334,9 @@ div.contents.row {
     @include boxBase(20px 0 ,30px);
     position: relative;
     float: right;
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+    border-right: 1px solid lightgray;
     height: 300px;
     width: 600px;
     color: black;
