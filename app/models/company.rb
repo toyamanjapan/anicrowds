@@ -5,6 +5,7 @@ class Company < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :projects
   has_many :reviews
+  has_many :concepts
 end
 
 class CompanyParameterSanitizer < Devise::ParameterSanitizer

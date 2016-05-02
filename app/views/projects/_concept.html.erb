@@ -21,9 +21,9 @@
       </a>
     </span>
     <div class ="concept_rating-star">
-      <% if concept.reviews.present? %>
+      <% if concept.rate.present? %>
         <span class="rating-star">
-          <i class="star-actived rate-<%= concept.reviews.average(:rate).round %>0"></i>
+          <i class="star-actived rate-<%= concept.rate %>0"></i>
         </span>
       <% else%>
         <span class="rating-star">

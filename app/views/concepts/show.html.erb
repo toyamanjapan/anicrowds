@@ -25,22 +25,24 @@
   </div>
     <div class="container">
         <div class="comments">
-            <% if @reviews %>
               <% @reviews.each do |review| %>
                 <p>
                   <strong><%= link_to review.company.name, "/companies/#{review.company_id}" %>：</strong>
-                      <span class="rating-star"><i class="star-actived rate-<%= review.rate %>0"></i></span>
                   <%= review.text %>
                 </p>
               <% end %>
-            <% end %>
         </div>
-      <% if company_signed_in? && current_company.id == @concept.project.company.id %>
-        <%= form_for [@project, @concept, @review] do |f| %>
-          <%= f.select :prize, [["this is a winner", "winner"], ["this is not a winner", "loser"]] , {prompt: t('is this winner of the contest?')} %>
-          <%= f.select :rate, options_for_select((1..10), selected: @review.try(:rate)), {prompt: t('placeholder.rate')} %>
-          <%= f.text_area :text %>
-          <%= f.submit 'post' %>
+      <% if company_signed_in? && current_company.id == @concept.project.company.id || user_signed_in? && current_user.id == @concept.user_id %>
+        <% if @concept.count >0 %>
+          <%= form_for [@project, @concept, @review] do |f| %>
+            <%= f.text_area :text %>
+            <%= f.submit 'post' %>
+          <% end %>
+        <% else %>
+          <%= form_for [@project, @concept] do |f| %>
+            <%= f.select :rate, options_for_select((1..10), selected: @rate.try(:rate)), {prompt: t('placeholder.rate')} %>
+            <%= f.submit 'post' %>
+          <% end %>
         <% end %>
       <% end %>
      <a class="post" href="/projects/<%= @concept.project.id%>">back to concept index</a>

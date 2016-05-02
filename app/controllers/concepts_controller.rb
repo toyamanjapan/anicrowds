@@ -24,13 +24,11 @@ class ConceptsController < ApplicationController
 
   def update
     concept = Concept.find(params[:id])
-    if concept.user_id = current_user.id
     concept.update(concept_params)
-    end
   end
 
   private
   def concept_params
-    params.permit(:title, :detail, :project_id, :image)
+    params.require(:concept).permit(:image, :title, :project_id, :rate)
   end
 end
