@@ -38,7 +38,8 @@
       </div>
    <% else %>
       <div class="contents clearfix">
-        <div class="concept_show" style="background-image: url(<%= @winner.image %>);">
+        <span>Winner Concept</span>
+        <div class="concept_show_bottom" style="background-image: url(<%= @winner.image %>);">
         <%= simple_format(@winner.title) %>
         <span class="name">
         <a href="">

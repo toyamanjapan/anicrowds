@@ -11,6 +11,7 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
+    @concept = Concept.new
     @concepts = @project.concepts.includes(:user).page(params[:page]).per(9).order("created_at DESC")
     @winner = @project.concepts.find_by(rate: @project.concepts.maximum(:rate))
   end
@@ -29,16 +30,16 @@ class ProjectsController < ApplicationController
   def update
     project = Project.find(params[:id])
     if project.company_id = current_company.id
-    project.update(project_params)
+    project.update(create_params)
     end
   end
 
   def create
-    Project.create(project_params)
+    Project.create(create_params)
   end
 
     private
-  def project_params
+  def create_params
     params.require(:project).permit(:title, :project_detail, :industry, :other, :image, :reward).merge(company_id:current_company.id)
   end
 

@@ -13,6 +13,7 @@ class ConceptsController < ApplicationController
 
   def edit
     @concept = Concept.find(params[:id])
+    @project = @concept.project
   end
 
   def destroy
@@ -29,6 +30,7 @@ class ConceptsController < ApplicationController
 
   private
   def concept_params
-    params.require(:concept).permit(:image, :title, :project_id, :rate)
+    ids = params.permit(:project_id)
+    params.require(:concept).permit(:image, :title, :rate).merge(ids)
   end
 end

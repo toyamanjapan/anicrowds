@@ -1,11 +1,10 @@
 <div class="contents row">
-  <%= form_tag("/projects/#{@concept.project.id}/concepts/#{@concept.id}", method: :patch) do %>
     <h3>
       Edit
     </h3>
-      <input placeholder="title" type="string" name="title" value ="<%=@concept.title%>">
-      <input placeholder="Image Url" type="text" name="image" value ="<%=@concept.image%>">
-      <!-- <textarea cols="30" name="detail" placeholder="text" rows="10"><%=@concept.detail%></textarea> -->
-      <input type="submit" value="SENT">
-  <% end %>
+        <%= form_for [@project,@concept] do |f| %>
+          <%= f.text_field :title , :placeholder => "title" %>
+          <%= f.text_field :image , :placeholder => "image url" %>
+          <%= f.submit 'post' %>
+        <% end %>
 </div>
