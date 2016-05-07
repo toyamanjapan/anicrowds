@@ -4,7 +4,7 @@
         <%= form_for @project do |f| %>
           <%= f.text_field :title , :placeholder => "title" %>
           <%= f.text_field :image , :placeholder => "project image url" %>
-          <%= f.select :reward, [["$300", "300"], ["$500", "500"]], {prompt: t('placeholder.reward')} %>
+          <%= f.select :reward, [["$500", "500"], ["$1000", "1000"]], {prompt: t('placeholder.reward')} %>
           <%= f.text_area :project_detail , :placeholder => "project detail" %>
           <%= f.text_field :industry , :placeholder => "industry" %>
           <%= f.text_area :other, :placeholder => "banner size" %>
