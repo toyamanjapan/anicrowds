@@ -56,14 +56,14 @@ ActiveRecord::Schema.define(version: 20160502121538) do
   end
 
   create_table "reviews", force: :cascade do |t|
-    t.integer  "user_id",    limit: 4
-    t.integer  "project_id", limit: 4
-    t.integer  "company_id", limit: 4
-    t.integer  "concept_id", limit: 4
-    t.text     "text",       limit: 65535
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.text    "text",            limit: 65535
+    t.integer "project_id",      limit: 4
+    t.integer "concept_id",      limit: 4
+    t.integer "reviewable_id",   limit: 4
+    t.string  "reviewable_type", limit: 255
   end
+
+  add_index "reviews", ["reviewable_type", "reviewable_id"], name: "index_reviews_on_reviewable_type_and_reviewable_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255,   default: "", null: false

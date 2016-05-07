@@ -9,7 +9,7 @@
       <% end %>
       <ul>
         <li><u><b><%= @project.title %></b></u></li>
-        <li><%= @project.project_detail %></li>
+        <!-- <li><%= @project.project_detail %></li> -->
         <!-- <li><%= @project.industry %></li> -->
         <li><%= @project.other %></li>
       </ul>
@@ -27,7 +27,6 @@
             <%= render partial: "concept", locals: { concept: concept } %>
           <% end %>
         <% end %>
-        <%= paginate(@concepts) %>
       </div>
       <div class="container">
         <%= form_for [@project, @concept] do |f| %>
@@ -61,7 +60,6 @@
         <% @concepts.each do |concept| %>
             <%= render partial: "concept", locals: { concept: concept } %>
         <% end %>
-        <%= paginate(@concepts) %>
       </div>
   <% end %>
 </div>

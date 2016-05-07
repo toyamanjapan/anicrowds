@@ -12,7 +12,7 @@ class ProjectsController < ApplicationController
   def show
     @project = Project.find(params[:id])
     @concept = Concept.new
-    @concepts = @project.concepts.includes(:user).page(params[:page]).per(9).order("created_at DESC")
+    @concepts = @project.concepts.includes(:user).order("created_at DESC")
     @winner = @project.concepts.find_by(rate: @project.concepts.maximum(:rate))
   end
 

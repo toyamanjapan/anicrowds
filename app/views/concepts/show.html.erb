@@ -27,7 +27,7 @@
         <div class="comments">
               <% @reviews.each do |review| %>
                 <p>
-                  <strong><%= link_to review.company.name, "/companies/#{review.company_id}" %>：</strong>
+                  <strong><%= link_to review.reviewable.name, "/companies/#{review.reviewable_id}" %>：</strong>
                   <%= review.text %>
                 </p>
               <% end %>
