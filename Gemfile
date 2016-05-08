@@ -47,3 +47,7 @@ gem 'sprockets', '2.11.0'
 gem 'devise'
 gem 'kaminari'
 end
+
+group :production, :staging do
+  gem 'rails_12factor'
+end
