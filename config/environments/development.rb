@@ -39,7 +39,7 @@ Rails.application.configure do
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 
-  config.action_mailer.default_url_options = { host: 'localhost:3000' }
+  config.action_mailer.default_url_options = { host: 'nameless-brook-91623.herokuapp.com' }
 
   config.action_mailer.smtp_settings = {
   :enable_starttls_auto => true,
